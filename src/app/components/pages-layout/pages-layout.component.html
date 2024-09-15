@@ -1,0 +1,86 @@
+<main>
+  <section class="header-section">
+    <header class="header">
+      <div class="header-content">
+        <div class="button-side-bar">
+          <!-- <app-sidebar></app-sidebar> -->
+          <button (click)="toggleSidebar()">
+            <img src="assets/svg/burger-menu.svg" />
+          </button>
+        </div>
+        <h1>Início</h1>
+        <div class="icons">
+          <img class="icon menu" src="/assets/svg/bell-fill.svg" />
+          <img class="icon menu" src="/assets/svg/bell.svg" />
+        </div>
+      </div>
+    </header>
+  </section>
+  <nav class="sidebar" [class.open]="isOpen">
+    <div class="sidebar-content">
+      <div class="title-sidebar">
+        <div>
+          <h1>Menu</h1>
+        </div>
+        <div class="close-menu">
+          <button (click)="toggleSidebar()">
+            <!-- <img src="assets/svg/burger-menu.svg" /> -->
+            <span>X</span>
+          </button>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
+            >Mesas</a
+          >
+        </li>
+        <li>
+          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
+            >Ajustes mesas</a
+          >
+        </li>
+        <li>
+          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
+            >Histórico</a
+          >
+        </li>
+        <li>
+          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
+            >Delivery</a
+          >
+        </li>
+        <li>
+          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
+            >Configurações</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <section class="main-section">
+    <ng-content></ng-content>
+  </section>
+  <section class="footer-section">
+    <footer class="footer">
+      <nav class="footer-nav">
+        <a href="#" class="nav-item active">
+          <i class="icon home"></i>
+          Início
+        </a>
+        <a href="#" class="nav-item">
+          <i class="icon history"></i>
+          Histórico
+        </a>
+        <a href="#" class="nav-item">
+          <i class="icon delivery"></i>
+          Delivery
+        </a>
+        <a href="#" class="nav-item">
+          <i class="icon settings"></i>
+          Ajustes
+        </a>
+      </nav>
+    </footer>
+  </section>
+</main>

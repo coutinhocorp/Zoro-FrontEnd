@@ -5,13 +5,15 @@
         <div class="button-side-bar">
           <!-- <app-sidebar></app-sidebar> -->
           <button (click)="toggleSidebar()">
-            <img src="assets/svg/burger-menu.svg" />
+            <span nz-icon nzType="menu-unfold" nzTheme="outline"></span>
           </button>
         </div>
-        <h1>{{ title }}</h1>
+        <div class="title">
+          <h1>{{ title }}</h1>
+        </div>
         <div class="icons">
-          <img class="icon menu" src="/assets/svg/bell-fill.svg" />
-          <img class="icon menu" src="/assets/svg/bell.svg" />
+          <span nz-icon nzType="bell" nzTheme="outline"></span>
+          <span nz-icon nzType="bell" nzTheme="fill"></span>
         </div>
       </div>
     </header>
@@ -24,36 +26,58 @@
         </div>
         <div class="close-menu">
           <button (click)="toggleSidebar()">
-            <!-- <img src="assets/svg/burger-menu.svg" /> -->
-            <span>X</span>
+            <span nz-icon nzType="menu-fold" nzTheme="outline"></span>
           </button>
         </div>
       </div>
+      <div class="divider">
+        <div></div>
+      </div>
       <ul>
         <li>
-          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
-            >Mesas</a
-          >
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="table"
+            nzTheme="outline"
+          ></span
+          ><a href="#">Mesas</a>
         </li>
         <li>
-          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
-            >Ajustes mesas</a
-          >
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="control"
+            nzTheme="outline"
+          ></span>
+          <a href="#">Ajustes</a>
         </li>
         <li>
-          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
-            >Histórico</a
-          >
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="read"
+            nzTheme="outline"
+          ></span>
+          <a href="#">Histórico</a>
         </li>
         <li>
-          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
-            >Delivery</a
-          >
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="rocket"
+            nzTheme="outline"
+          ></span>
+          <a href="#">Delivery</a>
         </li>
         <li>
-          <img class="icon menu" src="/assets/svg/bell-fill.svg" /><a href="#"
-            >Configurações</a
-          >
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="setting"
+            nzTheme="outline"
+          ></span>
+          <a href="#">Configurações</a>
         </li>
       </ul>
     </div>
@@ -65,19 +89,39 @@
     <footer class="footer">
       <nav class="footer-nav">
         <a href="#" class="nav-item active">
-          <i class="icon home"></i>
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="table"
+            nzTheme="outline"
+          ></span>
           Início
         </a>
         <a href="#" class="nav-item">
-          <i class="icon history"></i>
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="read"
+            nzTheme="outline"
+          ></span>
           Histórico
         </a>
         <a href="#" class="nav-item">
-          <i class="icon delivery"></i>
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="rocket"
+            nzTheme="outline"
+          ></span>
           Delivery
         </a>
         <a href="#" class="nav-item">
-          <i class="icon settings"></i>
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="control"
+            nzTheme="outline"
+          ></span>
           Ajustes
         </a>
       </nav>

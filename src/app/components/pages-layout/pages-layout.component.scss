@@ -7,7 +7,7 @@ main {
   align-items: center;
   justify-content: center;
   height: 100%;
-  background: #EEEEEE;
+  background: #eeeeee;
   color: $text-color;
 
   .header-section {
@@ -22,28 +22,47 @@ main {
       width: 100%;
     }
 
-    .header-content { padding: 16px;
+
+
+    .header-content {
+      width: 100%;
+      padding: 16px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+
+
+      h1 {
+        display: contents;
+        margin: 0;
+      }
     }
 
-    .button-side-bar{
+    .header-content > div {
+      flex: 1; /* Faz com que cada item dentro do contêiner ocupe a mesma largura */
+      display: flex; /* Define cada item como flexível para alinhamento interno */
+      justify-content: center; /* Alinha o conteúdo interno horizontalmente no centro */
+      align-items: center; /* Alinha o conteúdo interno verticalmente no centro */
+    }
+
+    .button-side-bar {
       flex: 1;
-
       z-index: 999999;
-
-      button{
+      justify-content: left !important;
+      
+      button {
         background: none;
         border: none;
-        // padding: 10px;
         cursor: pointer;
+       
 
-        img{
-          width: 24px;   /* Defina o tamanho desejado */
-          height: 24px;  /* Defina o tamanho desejado */
+        span {
+          font-size: 24px;
         }
       }
+    }
+
+    .title{
+     
     }
 
     .header-content h1 {
@@ -54,8 +73,10 @@ main {
     .icons {
       flex: 1;
       display: flex;
-      justify-content: flex-end;
+      justify-content: right !important;
       padding: 8px;
+      font-size: 16px;
+      gap: 8px;
     }
 
     .icons .icon {
@@ -64,7 +85,6 @@ main {
       cursor: pointer;
       margin-left: 10px;
     }
-
   }
 
   .sidebar {
@@ -75,7 +95,7 @@ main {
     height: 100%;
     color: $text-color;
     transform: translateX(-250px);
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
     z-index: 9999;
     display: none;
     background-color: rgb(0 0 0 / 50%);
@@ -84,29 +104,60 @@ main {
       width: 250px;
       height: 100%;
       display: flex;
-      background-color: #7001FD;
+      background-color: #eeeeee;
       flex-direction: column;
       padding: 8px;
       margin: 0;
     }
   }
 
-  .title-sidebar{
+  .title-sidebar {
     display: flex;
-    padding: 8px;
+    justify-content: space-between; /* Ajusta o espaço entre os itens */
+    align-items: center; /* Alinha verticalmente no centro */
+    padding: 0 8px 16px 8px;
 
     h1 {
-      color: #fff;
+      color: rgba(0, 0, 0, 0.85);
+      font-weight: 500;
+      display: contents;
     }
 
     .close-menu {
       flex: 1;
       display: flex;
       justify-content: flex-end;
-
+      align-self: center;
       width: 24px;
       height: 24px;
-      align-self: center;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        span {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 16px 0;
+    font-size: 14px;
+    color: $gray-bg;
+    font-weight: 400;
+
+    div {
+      flex-grow: 1;
+      height: 2px;
+      background-color: $text-color;
     }
   }
 
@@ -118,7 +169,6 @@ main {
   .sidebar ul {
     list-style-type: none;
     padding: 0;
-
   }
 
   .sidebar ul li {
@@ -129,7 +179,7 @@ main {
   }
 
   .sidebar ul li a {
-    color: white;
+    color: $text-color;
     text-decoration: none;
   }
 
@@ -173,14 +223,14 @@ main {
 
     .footer-nav .nav-item {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       color: $text-color;
       text-decoration: none;
     }
 
     .footer-nav .nav-item.active {
-      color: #7001FD;
+      color: #7001fd;
     }
 
     .footer-nav .icon {

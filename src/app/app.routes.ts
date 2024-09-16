@@ -1,8 +1,8 @@
-import { Routes } from '@angular/router';
+import { provideRouter, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
-import { EstabelecimentosComponent } from './pages/estabelecimentos/estabelecimentos.component';
-import { MesasComponent } from './pages/mesas/mesas.component';
 import { IndexComponent } from './pages/index/index.component';
+import { CozinhaComponent } from './pages/cozinha/cozinha.component';
+import { EntregadorComponent } from './pages/entregador/entregador.component';
 
 export const routes: Routes = [
   {
@@ -14,11 +14,13 @@ export const routes: Routes = [
     component: IndexComponent,
   },
   {
-    path: 'estabelecimentos',
-    component: EstabelecimentosComponent,
+    path: 'cozinha',
+    component: CozinhaComponent,
   },
   {
-    path: 'mesas',
-    component: MesasComponent,
+    path: 'entregador',
+    component: EntregadorComponent,
   },
 ];
+
+export const appRoutingProviders = [provideRouter(routes)];

@@ -22,14 +22,11 @@ main {
       width: 100%;
     }
 
-
-
     .header-content {
       width: 100%;
       padding: 16px;
       display: flex;
       justify-content: space-between;
-
 
       h1 {
         display: contents;
@@ -48,23 +45,18 @@ main {
       flex: 1;
       z-index: 999999;
       justify-content: left !important;
-      
+
       button {
         background: none;
         border: none;
         cursor: pointer;
-       
 
         span {
           font-size: 24px;
         }
       }
     }
-
-    .title{
-     
-    }
-
+    
     .header-content h1 {
       flex: 1;
       text-align: center;
@@ -106,7 +98,7 @@ main {
       display: flex;
       background-color: #eeeeee;
       flex-direction: column;
-      padding: 8px;
+      padding: 16px;
       margin: 0;
     }
   }
@@ -172,10 +164,18 @@ main {
   }
 
   .sidebar ul li {
-    padding: 15px;
+    padding-top: 16px;
     display: flex;
     align-items: center;
     gap: 24px;
+  }
+
+  .sidebar .sidebar-content ul li.active {
+    color: #7001fd;
+    a {
+      color: #7001fd;
+      text-decoration: none;
+    }
   }
 
   .sidebar ul li a {

@@ -44,16 +44,16 @@ export class LoginComponent {
         .login(this.loginForm.value.document, this.loginForm.value.password)
         .subscribe({
           next: () => {
-            const establishments = JSON.parse(
-              sessionStorage.getItem('establishments') || '[]'
-            );
-            this.toastrService.success('Login feito com sucesso!');
-            // usuario vinculado a mais de um estabelimento, mostra tela para login no estabelecimento se vinculado apenas em 1, mostra as mesas diretamente
-            if (establishments.length > 1) {
-              this.router.navigate(['/estabelecimento']);
-            } else {
-              this.router.navigate(['/mesas']);
-            }
+            // const establishments = JSON.parse(
+            //   sessionStorage.getItem('establishments') || '[]'
+            // );
+            // this.toastrService.success('Login feito com sucesso!');
+            // // usuario vinculado a mais de um estabelimento, mostra tela para login no estabelecimento se vinculado apenas em 1, mostra as mesas diretamente
+            // if (establishments.length > 1) {
+            //   this.router.navigate(['/estabelecimento']);
+            // } else {
+            //   this.router.navigate(['/mesas']);
+            // }
           },
           // error: () => this.toastrService.error('Erro ao realizar login!'),
           error: () => this.router.navigate(['/mesas']),

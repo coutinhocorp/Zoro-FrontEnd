@@ -34,70 +34,119 @@
         <div></div>
       </div>
       <ul>
-        <li>
+        <li [ngClass]="{ active: this.selectedFeature === featureEnum.Mesas }">
           <span
             class="icon menu"
             nz-icon
             nzType="table"
             nzTheme="outline"
           ></span
-          ><a href="#">Mesas</a>
+          ><a (click)="navigateTo(featureEnum.Mesas)">Mesas</a>
         </li>
-        <li>
+        <li
+          [ngClass]="{ active: this.selectedFeature === featureEnum.Ajustes }"
+        >
           <span
             class="icon menu"
             nz-icon
             nzType="control"
             nzTheme="outline"
           ></span>
-          <a href="#">Ajustes</a>
+          <a (click)="navigateTo(featureEnum.Ajustes)">Ajustes</a>
         </li>
-        <li>
+        <li
+          [ngClass]="{ active: this.selectedFeature === featureEnum.Historico }"
+        >
           <span
             class="icon menu"
             nz-icon
             nzType="read"
             nzTheme="outline"
           ></span>
-          <a href="#">Histórico</a>
+          <a (click)="navigateTo(featureEnum.Historico)">Histórico</a>
         </li>
-        <li>
+        <li
+          [ngClass]="{ active: this.selectedFeature === featureEnum.Delivery }"
+        >
           <span
             class="icon menu"
             nz-icon
             nzType="rocket"
             nzTheme="outline"
           ></span>
-          <a href="#">Delivery</a>
+          <a (click)="navigateTo(featureEnum.Delivery)">Delivery</a>
         </li>
-        <li>
+        <li
+          [ngClass]="{
+            active: this.selectedFeature === featureEnum.Configuracoes
+          }"
+        >
           <span
             class="icon menu"
             nz-icon
             nzType="setting"
             nzTheme="outline"
           ></span>
-          <a href="#">Configurações</a>
+          <a (click)="navigateTo(featureEnum.Configuracoes)">Configurações</a>
+        </li>
+        <li
+          [ngClass]="{
+            active: this.selectedFeature === featureEnum.Configuracoes
+          }"
+        >
+          <span
+            class="icon menu"
+            nz-icon
+            nzType="setting"
+            nzTheme="outline"
+          ></span>
+          <a (click)="navigateTo(featureEnum.Entregador)">Entregadores</a>
         </li>
       </ul>
     </div>
   </nav>
   <section class="main-section">
-    <ng-content></ng-content>
+    @if(this.selectedFeature == featureEnum.Mesas){
+    <app-mesas-layout></app-mesas-layout>
+    } @if(this.selectedFeature == featureEnum.Ajustes){
+    <app-ajustes-layout></app-ajustes-layout>
+    } @if(this.selectedFeature == featureEnum.Historico){
+    <app-historico-layout></app-historico-layout>
+    } @if(this.selectedFeature == featureEnum.Delivery){
+    <app-delivery-layout></app-delivery-layout>
+    } @if(this.selectedFeature == featureEnum.Configuracoes){
+    <app-configuracoes-layout></app-configuracoes-layout>
+    } @if(this.selectedFeature == featureEnum.Entregador){
+    <app-entregador-layout></app-entregador-layout>
+    }
   </section>
   <section class="footer-section">
     <footer class="footer">
       <nav class="footer-nav">
-        <a href="#" class="nav-item active">
+        <a
+          (click)="navigateTo(featureEnum.Mesas)"
+          class="nav-item"
+          [ngClass]="{
+            'nav-item': true,
+            active: this.selectedFeature === featureEnum.Mesas
+          }"
+        >
           <span
             class="icon menu"
             nz-icon
             nzType="table"
             nzTheme="outline"
           ></span>
-          Início
+          Mesas
         </a>
-        <a href="#" class="nav-item">
+        <a
+          (click)="navigateTo(featureEnum.Historico)"
+          class="nav-item"
+          [ngClass]="{
+            'nav-item': true,
+            active: this.selectedFeature === featureEnum.Historico
+          }"
+        >
           <span
             class="icon menu"
             nz-icon
@@ -106,7 +155,14 @@
           ></span>
           Histórico
         </a>
-        <a href="#" class="nav-item">
+        <a
+          (click)="navigateTo(featureEnum.Delivery)"
+          class="nav-item"
+          [ngClass]="{
+            'nav-item': true,
+            active: this.selectedFeature === featureEnum.Delivery
+          }"
+        >
           <span
             class="icon menu"
             nz-icon
@@ -115,7 +171,14 @@
           ></span>
           Delivery
         </a>
-        <a href="#" class="nav-item">
+        <a
+          (click)="navigateTo(featureEnum.Ajustes)"
+          class="nav-item"
+          [ngClass]="{
+            'nav-item': true,
+            active: this.selectedFeature === featureEnum.Ajustes
+          }"
+        >
           <span
             class="icon menu"
             nz-icon

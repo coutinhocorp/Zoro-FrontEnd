@@ -7,7 +7,7 @@ import { EntregadorComponent } from './pages/entregador/entregador.component';
 export const routes: Routes = [
   {
     path: '',
-    component: IndexComponent,
+    component: LoginComponent,
     pathMatch: 'full'
   },
   {
